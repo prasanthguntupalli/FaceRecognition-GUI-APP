@@ -4,6 +4,7 @@ import os
 def start_capture(name):
         path = "./data/" + name
         num_of_images = 0
+        num_of_frames=300
         detector = cv2.CascadeClassifier("./data/haarcascade_frontalface_default.xml")
         try:
             os.makedirs(path)
@@ -31,7 +32,7 @@ def start_capture(name):
             except :
 
                 pass
-            if key == ord("q") or key == 27 or num_of_images > 300: #take 300 frames
+            if key == ord("q") or key == 27 or num_of_images > num_of_frames: #take 300 frames
                 break
         cv2.destroyAllWindows()
         return num_of_images
@@ -39,6 +40,7 @@ def start_capture(name):
 def take_video(name, video):
     path = "./data/" + name
     num_of_images = 0
+    num_of_frames=300
     detector = cv2.CascadeClassifier("./data/haarcascade_frontalface_default.xml")
     try:
         os.makedirs(path)
@@ -71,7 +73,7 @@ def take_video(name, video):
         except :
 
             pass
-        if key == ord("q") or key == 27 or num_of_images > 300: #take 300 frames
+        if key == ord("q") or key == 27 or num_of_images > num_of_frames: #take 300 frames
             break
     vid.release()
     cv2.destroyAllWindows()
