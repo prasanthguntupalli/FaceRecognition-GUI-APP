@@ -4,6 +4,12 @@ from PIL import Image
 from tkinter import messagebox
 
 def main_app(name, timeout = 5):
+        """
+        Main function for face recognition application.
+        Parameters:
+        name (str): Name identifier for the face classifier to be used.
+        timeout (int, optional): Timeout duration in seconds for the application to wait for face recognition. Default is 5 seconds.
+        """
         
         face_cascade = cv2.CascadeClassifier('./data/haarcascade_frontalface_default.xml')
         recognizer = cv2.face.LBPHFaceRecognizer_create()
